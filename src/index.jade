@@ -1,280 +1,274 @@
 doctype html
 html
-	head
-		meta(charset='utf-8')
-		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-		title Git Your FTC On
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+        title Git Your FTC On
 
-		link(rel='stylesheet', type='text/css', href='build/build.css')
+        link(rel='stylesheet', type='text/css', href='build/build.css')
 
-	body
+    body
 
-		article
+        article
 
-			section
-				h1 Git Your FTC On
-		
-			section
-				h2.bullet Hi.
-				h3.bullet I'm AJ
-				h3.bullet Programmer, 2856, Redshift Robotics
-				h3.bullet Senior @ SAAS
-				h3.bullet Questions = ♥
-			
-			section
-				h2.bullet So. Git.
-				h3.bullet Technical definition:
-				h3.bullet Git is a distributed version control system.
-				h3.bullet Better definition:
-				h3.bullet Git is a piece of software that helps you keep track of your software...
-				h3.bullet ...and it does so in a way that requires no central server.
-				
-			section
-				h2.bullet Why Git?
-				h3.bullet Keeps a history of your code
-				h3.bullet Undo on steroids
-				h3.bullet Handles conflicts (merges)
-				h3.bullet Also:
+            section
+                h1 Git
 
-			section.emphatic-text(data-bespoke-backdrop='emphatic')
-				img.bullet(src='images/GitHub-Mark-120px-plus.png', alt='GitHub cat logo', width='120', height='120')
-				img.bullet(src='images/GitHub_Logo.png', alt='GitHub wordmark', width='250', height='102')
-        
-			section
-				h2.bullet Let's begin
-				h3.bullet First: make a repository on your local computer.
-				h3.bullet This is called <code>init</code>ializing.
-				pre.bullet
-					code.language-bash.
-						$ pwd
-						/home/alex/Development/presentation-git-your-ftc-on
+            section
+                h2.bullet Thanks
+                h3.bullet AJ made most of these slides
 
-						$ git init
-						Initialized empty Git repository in
-						/Users/alex/Development/presentation-git-your-ftc-on/.git/
+            section
+                h2.bullet So. Git.
+                h3.bullet Technical definition:
+                h3.bullet Git is a distributed version control system.
+                h3.bullet Better definition:
+                h3.bullet Git is a piece of software that helps you keep track of your software.
 
-						$ git status
-						On branch master
+            section
+                h2.bullet Why Git?
+                h3.bullet Keeps a history of your code
+                h3.bullet Undo on steroids
+                h3.bullet Handles conflicts (merges)
+                h3.bullet Also:
 
-						Initial commit
+            section.emphatic-text(data-bespoke-backdrop='emphatic')
+                img(src='images/GitHub-Mark-120px-plus.png', alt='GitHub cat logo', width='120', height='120')
+                img.bullet(src='images/GitHub_Logo.png', alt='GitHub wordmark', width='250', height='102')
 
-						nothing to commit (create/copy files and use "git add" to track)
-						
-			section
-				h2.bullet Make some changes...
-				pre.bullet
-					code.language-bash.
-						$ echo 'Hello, world!' > README.md
-						$ git status
-						On branch master
+            section
+                h2.bullet Let's begin
+                h3.bullet First: make a repository on your local computer.
+                h3.bullet This is called <code>init</code>ializing.
+                pre.bullet
+                    code.language-bash.
+                        $ pwd
+                        /home/nathan/Programming/Projects_in_cs/Robotic/
 
-						Initial commit
+                        $ git init
+                        Initialized empty Git repository in
+                        /home/nathan/Programming/Projects_in_cs/Robotics/.git/
 
-						Untracked files:
-							(use "git add &lt;file&gt;..." to include in what will be committed)
+                        $ git status
+                        On branch master
+                        Initial commit
+                        nothing to commit (create/copy files and use "git add" to track)
 
-							README.md
+            section
+                h2.bullet Make some changes...
+                pre.bullet
+                    code.language-bash.
+                        $ echo 'Hello, world!' > README.md
+                        $ git status
+                        On branch master
 
-						nothing added to commit but untracked files present (use "git add" to track)
+                        Initial commit
 
-			section.emphatic-text(data-bespoke-backdrop='emphatic')
-				h2.bullet When in doubt,
-				h2.bullet 
-					code git status
+                        Untracked files:
+                            (use "git add &lt;file&gt;..." to include in what will be committed)
 
-			section.emphatic-text(data-bespoke-backdrop='emphatic')
-				pre.bullet
-					code.language-bash.
-						$ git status
-						On branch master
+                            README.md
 
-						Initial commit
+                        nothing added to commit but untracked files present (use "git add" to track)
 
-						Untracked files:
-							(use "git add &lt;file&gt;..." to include in what will be committed)
+            section.emphatic-text(data-bespoke-backdrop='emphatic')
+                h2.bullet When in doubt,
+                h2.bullet
+                    code git status
 
-							README.md
+            section.emphatic-text(data-bespoke-backdrop='emphatic')
+                pre.bullet
+                    code.language-bash.
+                        $ git status
+                        On branch master
 
-						nothing added to commit but untracked files present (use "git add" to track)
+                        Initial commit
 
-			section
-				h2.bullet Commits
-				h3.bullet The <strong>working directory</strong> is what you see in your editor.
-				h3.bullet The <strong>staging area</strong> is where you queue changes to commit them.
-				h3.bullet A <strong>commit</strong> is a snapshot of your repository at a particular point in time. 
-        
-			section
-				h2 A picture is worth 1000 words (assumes x86)
-				img(src='images/git-staging-area.png', alt='Git staging area diagram', height='195', width='343')
+                        Untracked files:
+                            (use "git add &lt;file&gt;..." to include in what will be committed)
 
-			section
-				h2.bullet Commit some changes
-				h3.bullet <code>git add</code> takes stuff in the working directory and stages it
-				h3.bullet You need to <code>git add</code> every time you change stuff - not just when you add new files!
-				h3.bullet <code>git commit</code> commits the changes in the staging area
-				
-			section
-				h2.bullet Example
-				pre.bullet
-					code.language-bash.
-						$ git status
-						On branch master
+                            README.md
 
-						Initial commit
+                        nothing added to commit but untracked files present (use "git add" to track)
 
-						Untracked files:
-							(use "git add &lt;file&gt;..." to include in what will be committed)
-						
-							README.md
+            section
+                h2.bullet Commits
+                h3.bullet The <strong>working directory</strong> is what you see in your editor.
+                h3.bullet The <strong>staging area</strong> is where you queue changes to commit them.
+                h3.bullet A <strong>commit</strong> is a snapshot of your repository at a particular point in time.
 
-						nothing added to commit but untracked files present (use "git add" to track)
+            section
+                h2 A picture is worth 1000 words (assumes x86)
+                img(src='images/git-staging-area.png', alt='Git staging area diagram', height='195', width='343')
 
-						$ git add README.md
+            section
+                h2.bullet Commit some changes
+                h3.bullet <code>git add</code> takes stuff in the working directory and stages it
+                h3.bullet You need to <code>git add</code> every time you change stuff - not just when you add new files!
+                h3.bullet <code>git commit</code> commits the changes in the staging area
 
-						$ git commit -m "Initial commit"
-						[master (root-commit) 85d721a] Initial commit
-						&nbsp;1 file changed, 1 insertion(+)
-						&nbsp;create mode 100644 README.md
-						
-			section
-				h2.bullet What just happened?
-				h3.bullet We made some changes
-				h3.bullet We staged them, with <code>git add</code>
-				h3.bullet We committed, with <code>git commit</code>
+            section
+                h2.bullet Example
+                pre.bullet
+                    code.language-bash.
+                        $ git status
+                        On branch master
 
-			section
-				pre
-					code.language-bash.
-						$ git status
-						On branch master
-						nothing to commit, working directory clean
+                        Initial commit
 
-						$ git log
-						commit 85d721a9aad86b4ab1ba7add3f4add97bb431a1a
-						Author: Alex Jordan <alex@strugee.net>
-						Date:		Wed Sep 23 17:39:26 2015 -0700
+                        Untracked files:
+                            (use "git add &lt;file&gt;..." to include in what will be committed)
 
-						&nbsp;&nbsp;Initial commit
+                            README.md
 
-			section
-				h2.bullet We did it!
-				h3.bullet We used <code>git status</code>, because we always use <code>git status</code>
-				h3.bullet Then we used <code>git log</code> to see a log of all our commits (there's only one so far)
+                        nothing added to commit but untracked files present (use "git add" to track)
 
-			section
-				h2.bullet Making branches
-				h3.bullet A <em>branch</em> is a way to develop something in parallel
-				h3.bullet You can make changes and commit on a separate branch, without affecting everyone else
-				h3.bullet You already have a branch: <code>master</code>
+                        $ git add README.md
 
-			section
-				h3.bullet <code>git status</code>:
-				pre.bullet
-					code.language-bash.
-						$ git status
-						On branch master
-						nothing to commit, working directory clean
-				h3.bullet Let's list our branches:
-				pre.bullet
-					code.language-bash.
-						$ git branch
-						* master
+                        $ git commit -m "Initial commit"
+                        [master (root-commit) 85d721a] Initial commit
+                        &nbsp;1 file changed, 1 insertion(+)
+                        &nbsp;create mode 100644 README.md
 
-			section
-				h3.bullet Create a new one:
-				pre.bullet
-					code.language-bash.
-						$ git branch something-else
-				h3.bullet And list our branches again:
-				pre.bullet
-					code.language-bash.
-						$ git branch
-						* master
-						&nbsp;&nbsp;something-else
+            section
+                h2.bullet What just happened?
+                h3.bullet We made some changes
+                h3.bullet We staged them, with <code>git add</code>
+                h3.bullet We committed, with <code>git commit</code>
 
-			section
-				h3.bullet Finally, we can switch to our new branch:
-				pre.bullet
-					code.language-bash.
-						$ git checkout something-else
-						Switched to branch 'something-else'
+            section
+                pre
+                    code.language-bash.
+                        $ git status
+                        On branch master
+                        nothing to commit, working directory clean
 
-						$ git status
-						On branch something-else
-						nothing to commit, working directory clean
+                        $ git log
+                        commit 85d721a9aad86b4ab1ba7add3f4add97bb431a1a
+                        Author: Alex Jordan <alex@strugee.net>
+                        Date:        Wed Sep 23 17:39:26 2015 -0700
 
-			section
-				h2.bullet Demonstration: different commits on different branches
+                        &nbsp;&nbsp;Initial commit
 
-			section
-				h2.bullet Pushing
-				h3.bullet We've been working locally so far
-				h3.bullet Let's publish!
-				h3.bullet
-					a(href='https://github.com/') GitHub
+            section
+                h2.bullet We did it!
+                h3.bullet We used <code>git status</code>, because we always use <code>git status</code>
+                h3.bullet Then we used <code>git log</code> to see a log of all our commits (there's only one so far)
 
-			section
-				h2.bullet GitHub
-				h3.bullet Free online hosting for Git
-				h3.bullet "Social coding"
-				h3.bullet GitHub != Git
+            section
+                h2.bullet Making branches
+                h3.bullet A <em>branch</em> is a way to develop something in parallel
+                h3.bullet You can make changes and commit on a separate branch, without affecting everyone else
+                h3.bullet You already have a branch: <code>master</code>
 
-			section
-				h2.bullet Remotes
-				h3.bullet A <em>remote</em> is basically a URL + name
-				h3.bullet The URL points to some other copy of the repository
-				h3.bullet For example: GitHub
+            section
+                h3.bullet <code>git status</code>:
+                pre.bullet
+                    code.language-bash.
+                        $ git status
+                        On branch master
+                        nothing to commit, working directory clean
+                h3.bullet Let's list our branches:
+                pre.bullet
+                    code.language-bash.
+                        $ git branch
+                        * master
 
-			section
-				h2.bullet Putting them together
-				h3.bullet We're going to add a remote called <code>origin</code> that points to GitHub
-				h3.bullet (<code>origin</code> is the traditional name for your "main" remote)
-				h3.bullet Then we're going to upload our commits by <em>pushing</em> them to GitHub
-				
-			section.emphatic-text(data-bespoke-backdrop='emphatic')
-				h2 Example
-				pre
-					code.language-bash.
-						$ git push origin master
-						Counting objects: 3, done.
-						Writing objects: 100% (3/3), 229 bytes | 0 bytes/s, done.
-						Total 3 (delta 0), reused 0 (delta 0)
-						To git@github.com:redshiftrobotics/git-your-ftc-on-demonstration.git
-						&nbsp;* [new branch]			 master -> master
+            section
+                h3.bullet Create a new one:
+                pre.bullet
+                    code.language-bash.
+                        $ git branch something-else
+                h3.bullet And list our branches again:
+                pre.bullet
+                    code.language-bash.
+                        $ git branch
+                        * master
+                        &nbsp;&nbsp;something-else
 
-			section
-				h3.bullet "Hey, Git! Take the local branch <code>master</code>, and push (upload) it to the <code>origin</code> remote."
-			
-			section
-				h2.bullet Audience participation
-				h3.bullet Give me your GitHub username
-				h3.bullet Try making a change to <code>README.md</code>
-				h3.bullet Push
+            section
+                h3.bullet Finally, we can switch to our new branch:
+                pre.bullet
+                    code.language-bash.
+                        $ git checkout something-else
+                        Switched to branch 'something-else'
 
-			section
-				h2.bullet Merging
-				h3.bullet <code>git status</code> will tell you how to mark resolutions, etc.
-				h3.bullet Git inserts markers into files to help you
-				h3.bullet I'll demonstrate
+                        $ git status
+                        On branch something-else
+                        nothing to commit, working directory clean
 
-			section
-				h2.bullet GitHub-specific stuff
-				h3.bullet If you clone someone else's repo and push, you'll be denied
-				h3.bullet <em>Forking</em> creates another copy of the repository, so that you can have read-write access
-				h3.bullet Protip: remotes are very useful when dealing with forks!
-				h3.bullet A <em>Pull Request</em> requests someone else to merge changes in your fork (use branches!)
+            section
+                h2.bullet Demonstration: different commits on different branches
 
-			section
-				h2.bullet Other useful tools
-				h3.bullet <code>git clone</code> will take a repository URL and download and set it up for you
-				h3.bullet <code>git diff</code> will show you the difference between your working directory and your staging area
-				h3.bullet <code>git diff --cached</code> does the same, but for the staging area and the current commit
+            section
+                h2.bullet Pushing
+                h3.bullet We've been working locally so far
+                h3.bullet Let's publish!
+                h3.bullet
+                    a(href='https://github.com/') GitHub
 
-			section
-				h2 Access this presention again
-				h3 <a href="http://saasrobotics.com/presentation-git-your-ftc-on">http://saasrobotics.com/presentation-git-your-ftc-on</a>
-				p
-					img(src='images/qr.gif', alt='QR code to presentation URL')
-				h4 Or, <a href="https://github.com/redshiftrobotics/presentation-git-your-ftc-on"><code>git clone</code> the source</a>.
-			
-			script(src='build/build.js')
+            section
+                h2.bullet GitHub
+                h3.bullet Free online hosting for Git
+                h3.bullet "Social coding"
+                h3.bullet GitHub != Git
+
+            section
+                h2.bullet Remotes
+                h3.bullet A <em>remote</em> is basically a URL + name
+                h3.bullet The URL points to some other copy of the repository
+                h3.bullet For example: GitHub
+
+            section
+                h2.bullet Putting them together
+                h3.bullet We're going to add a remote called <code>origin</code> that points to GitHub
+                h3.bullet (<code>origin</code> is the traditional name for your "main" remote)
+                h3.bullet Then we're going to upload our commits by <em>pushing</em> them to GitHub
+
+            section.emphatic-text(data-bespoke-backdrop='emphatic')
+                h2 Example
+                pre
+                    code.language-bash.
+                        $ git push origin master
+                        Counting objects: 3, done.
+                        Writing objects: 100% (3/3), 229 bytes | 0 bytes/s, done.
+                        Total 3 (delta 0), reused 0 (delta 0)
+                        To git@github.com:redshiftrobotics/git-your-ftc-on-demonstration.git
+                        &nbsp;* [new branch]             master -> master
+
+            section
+                h3.bullet "Hey, Git! Take the local branch <code>master</code>, and push (upload) it to the <code>origin</code> remote."
+
+            section
+                h2.bullet Audience participation
+                h3.bullet Give me your GitHub username
+                h3.bullet Try making a change to <code>README.md</code>
+                h3.bullet Push
+
+            section
+                h2.bullet Merging
+                h3.bullet <code>git status</code> will tell you how to mark resolutions, etc.
+                h3.bullet Git inserts markers into files to help you
+                h3.bullet I'll demonstrate
+
+            section
+                h2.bullet GitHub-specific stuff
+                h3.bullet If you clone someone else's repo and push, you'll be denied
+                h3.bullet <em>Forking</em> creates another copy of the repository, so that you can have read-write access
+                h3.bullet Protip: remotes are very useful when dealing with forks!
+                h3.bullet A <em>Pull Request</em> requests someone else to merge changes in your fork (use branches!)
+
+            section
+                h2.bullet Other useful tools
+                h3.bullet <code>git clone</code> will take a repository URL and download and set it up for you
+                h3.bullet <code>git diff</code> will show you the difference between your working directory and your staging area
+                h3.bullet <code>git diff --cached</code> does the same, but for the staging area and the current commit
+
+            section
+                h2 Access this presention again
+                h3 <a href="http://saasrobotics.com/presentation-git-your-ftc-on">http://saasrobotics.com/presentation-git-your-ftc-on</a>
+                p
+                    img(src='images/qr.gif', alt='QR code to presentation URL')
+                h4 Or, <a href="https://github.com/redshiftrobotics/presentation-git-your-ftc-on"><code>git clone</code> the source</a>.
+
+            script(src='build/build.js')
