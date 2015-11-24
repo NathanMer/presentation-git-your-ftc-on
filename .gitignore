@@ -3,4 +3,4 @@ bower_components
 dist
 bespoke-theme-*
 
-.swp
+*.swp
