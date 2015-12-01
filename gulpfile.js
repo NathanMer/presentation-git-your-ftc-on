@@ -101,7 +101,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('deploy', ['build'], function(done) {
-  ghpages.publish(path.join(__dirname, 'dist'), { logger: gutil.log }, done);
+  ghpages.publish(path.join(__dirname, 'dist'), { logger: gutil.log, repo: "https://github.com/NathanMer/presentation-git-your-ftc-on.git"}, done);
 });
 
 gulp.task('build', ['js', 'html', 'css', 'images']);

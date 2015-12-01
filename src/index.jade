@@ -37,7 +37,7 @@ html
                 img.bullet(src='images/GitHub_Logo.png', alt='GitHub wordmark', width='250', height='102')
 
             section
-                h2.bullet Let's begin
+                h2.bullet Let's begin - do this once.
                 h3.bullet First: make a repository on your local computer.
                 h3.bullet This is called <code>init</code>ializing.
                 pre.bullet
@@ -55,41 +55,53 @@ html
                         nothing to commit (create/copy files and use "git add" to track)
 
             section
+                h2.bullet Add some code
+                pre.bullet
+                    code.language-bash.
+                        $ echo "Readme" > README.md
+
+                        $ git add README.md
+
+                        $ git commit -m "Initial Commit"
+
+
+            section
+                h2.bullet Sync with GitHub
+                h3.bullet Find the URL on your GitHub page.
+                pre.bullet
+                    code.language-bash.
+                        $ git remote add origin https://github.com/Garfield-HS-Projects/TANK.git
+
+                        $ git push origin master
+
+            section
+                h2.bullet For everyone else
+                h3.bullet All other team members need to do this.
+                h3.bullet You only need to do this once.
+                pre.bullet
+                    code.language-bash.
+                        $ git clone https://github.com/Garfield-HS-Projects/TANK.git
+
+            section
                 h2.bullet Make some changes...
                 pre.bullet
                     code.language-bash.
                         $ echo 'Hello, world!' > README.md
                         $ git status
                         On branch master
+                        Your branch is up-to-date with 'origin/master'.
+                        Changes not staged for commit:
+                            (use "git add <file>..." to update what will be committed)
+                            (use "git checkout -- <file>..." to discard changes in working directory)
 
-                        Initial commit
+                            modified:   README.md
 
-                        Untracked files:
-                            (use "git add &lt;file&gt;..." to include in what will be committed)
-
-                            README.md
-
-                        nothing added to commit but untracked files present (use "git add" to track)
+                        no changes added to commit (use "git add" and/or "git commit -a")
 
             section.emphatic-text(data-bespoke-backdrop='emphatic')
                 h2.bullet When in doubt,
                 h2.bullet
                     code git status
-
-            section.emphatic-text(data-bespoke-backdrop='emphatic')
-                pre.bullet
-                    code.language-bash.
-                        $ git status
-                        On branch master
-
-                        Initial commit
-
-                        Untracked files:
-                            (use "git add &lt;file&gt;..." to include in what will be committed)
-
-                            README.md
-
-                        nothing added to commit but untracked files present (use "git add" to track)
 
             section
                 h2.bullet Commits
@@ -113,22 +125,20 @@ html
                     code.language-bash.
                         $ git status
                         On branch master
+                        Your branch is up-to-date with 'origin/master'.
+                        Changes not staged for commit:
+                            (use "git add <file>..." to update what will be committed)
+                            (use "git checkout -- <file>..." to discard changes in working directory)
 
-                        Initial commit
+                            modified:   README.md
 
-                        Untracked files:
-                            (use "git add &lt;file&gt;..." to include in what will be committed)
-
-                            README.md
-
-                        nothing added to commit but untracked files present (use "git add" to track)
+                        no changes added to commit (use "git add" and/or "git commit -a")
 
                         $ git add README.md
 
-                        $ git commit -m "Initial commit"
-                        [master (root-commit) 85d721a] Initial commit
-                        &nbsp;1 file changed, 1 insertion(+)
-                        &nbsp;create mode 100644 README.md
+                        $ git commit -m "Made README say hello."
+                        [master cca3472] Made README say hello.
+                        &nbsp;1 file changed, 1 insertion(+), 1 deletion(-)
 
             section
                 h2.bullet What just happened?
@@ -141,14 +151,9 @@ html
                     code.language-bash.
                         $ git status
                         On branch master
+                        Your branch is ahead of 'origin/master' by 1 commit.
+                        &nbsp;&nbsp;(use "git push" to publish your local commits)
                         nothing to commit, working directory clean
-
-                        $ git log
-                        commit 85d721a9aad86b4ab1ba7add3f4add97bb431a1a
-                        Author: Alex Jordan <alex@strugee.net>
-                        Date:        Wed Sep 23 17:39:26 2015 -0700
-
-                        &nbsp;&nbsp;Initial commit
 
             section
                 h2.bullet We did it!
@@ -156,54 +161,9 @@ html
                 h3.bullet Then we used <code>git log</code> to see a log of all our commits (there's only one so far)
 
             section
-                h2.bullet Making branches
-                h3.bullet A <em>branch</em> is a way to develop something in parallel
-                h3.bullet You can make changes and commit on a separate branch, without affecting everyone else
-                h3.bullet You already have a branch: <code>master</code>
-
-            section
-                h3.bullet <code>git status</code>:
-                pre.bullet
-                    code.language-bash.
-                        $ git status
-                        On branch master
-                        nothing to commit, working directory clean
-                h3.bullet Let's list our branches:
-                pre.bullet
-                    code.language-bash.
-                        $ git branch
-                        * master
-
-            section
-                h3.bullet Create a new one:
-                pre.bullet
-                    code.language-bash.
-                        $ git branch something-else
-                h3.bullet And list our branches again:
-                pre.bullet
-                    code.language-bash.
-                        $ git branch
-                        * master
-                        &nbsp;&nbsp;something-else
-
-            section
-                h3.bullet Finally, we can switch to our new branch:
-                pre.bullet
-                    code.language-bash.
-                        $ git checkout something-else
-                        Switched to branch 'something-else'
-
-                        $ git status
-                        On branch something-else
-                        nothing to commit, working directory clean
-
-            section
-                h2.bullet Demonstration: different commits on different branches
-
-            section
                 h2.bullet Pushing
                 h3.bullet We've been working locally so far
-                h3.bullet Let's publish!
+                h3.bullet We want to share
                 h3.bullet
                     a(href='https://github.com/') GitHub
 
@@ -214,55 +174,32 @@ html
                 h3.bullet GitHub != Git
 
             section
-                h2.bullet Remotes
-                h3.bullet A <em>remote</em> is basically a URL + name
-                h3.bullet The URL points to some other copy of the repository
-                h3.bullet For example: GitHub
-
-            section
-                h2.bullet Putting them together
-                h3.bullet We're going to add a remote called <code>origin</code> that points to GitHub
-                h3.bullet (<code>origin</code> is the traditional name for your "main" remote)
-                h3.bullet Then we're going to upload our commits by <em>pushing</em> them to GitHub
-
-            section.emphatic-text(data-bespoke-backdrop='emphatic')
                 h2 Example
                 pre
                     code.language-bash.
-                        $ git push origin master
-                        Counting objects: 3, done.
-                        Writing objects: 100% (3/3), 229 bytes | 0 bytes/s, done.
-                        Total 3 (delta 0), reused 0 (delta 0)
-                        To git@github.com:redshiftrobotics/git-your-ftc-on-demonstration.git
-                        &nbsp;* [new branch]             master -> master
+                        $ git pull
+                        Username for 'https://github.com': NathanMer
+                        Password for 'https://NathanMer@github.com': 
+                        Already up-to-date.
+
+                        $ git push
+                            Username for 'https://github.com': NathanMer
+                            Password for 'https://NathanMer@github.com':
+                            Counting objects: 3, done.
+                            Writing objects: 100% (3/3), 276 bytes | 0 bytes/s, done.
+                            Total 3 (delta 0), reused 0 (delta 0)
+                            To https://github.com/Garfield-HS-Projects/TANK.git
+                            &nbsp;&nbsp;d6ff69b..cca3472  master -> master
 
             section
                 h3.bullet "Hey, Git! Take the local branch <code>master</code>, and push (upload) it to the <code>origin</code> remote."
 
             section
-                h2.bullet Audience participation
-                h3.bullet Give me your GitHub username
-                h3.bullet Try making a change to <code>README.md</code>
-                h3.bullet Push
-
-            section
-                h2.bullet Merging
-                h3.bullet <code>git status</code> will tell you how to mark resolutions, etc.
-                h3.bullet Git inserts markers into files to help you
-                h3.bullet I'll demonstrate
-
-            section
-                h2.bullet GitHub-specific stuff
-                h3.bullet If you clone someone else's repo and push, you'll be denied
-                h3.bullet <em>Forking</em> creates another copy of the repository, so that you can have read-write access
-                h3.bullet Protip: remotes are very useful when dealing with forks!
-                h3.bullet A <em>Pull Request</em> requests someone else to merge changes in your fork (use branches!)
-
-            section
-                h2.bullet Other useful tools
-                h3.bullet <code>git clone</code> will take a repository URL and download and set it up for you
-                h3.bullet <code>git diff</code> will show you the difference between your working directory and your staging area
-                h3.bullet <code>git diff --cached</code> does the same, but for the staging area and the current commit
+                h2.bullet Merge Conflicts!
+                h3.bullet Sometimes two people edit the same file in a way git can't fix
+                h3.bullet This can usually be avoided by spliting your project into parts
+                h3.bullet Each person should only edit the files for their part.
+                h3.bullet Then people will not be editing the same files.
 
             section
                 h2 Access this presention again
