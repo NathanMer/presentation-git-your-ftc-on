@@ -9,22 +9,18 @@
   <body>
     <article>
       <section>
-        <h1>Git Your FTC On</h1>
+        <h1>Git</h1>
       </section>
       <section>
-        <h2 class="bullet">Hi.</h2>
-        <h3 class="bullet">I'm AJ</h3>
-        <h3 class="bullet">Programmer, 2856, Redshift Robotics</h3>
-        <h3 class="bullet">Senior @ SAAS</h3>
-        <h3 class="bullet">Questions = ♥</h3>
+        <h2 class="bullet">Thanks</h2>
+        <h3 class="bullet">AJ made most of these slides</h3>
       </section>
       <section>
         <h2 class="bullet">So. Git.</h2>
         <h3 class="bullet">Technical definition:</h3>
         <h3 class="bullet">Git is a distributed version control system.</h3>
         <h3 class="bullet">Better definition:</h3>
-        <h3 class="bullet">Git is a piece of software that helps you keep track of your software...</h3>
-        <h3 class="bullet">...and it does so in a way that requires no central server.</h3>
+        <h3 class="bullet">Git is a piece of software that helps you keep track of your software.</h3>
       </section>
       <section>
         <h2 class="bullet">Why Git?</h2>
@@ -33,64 +29,73 @@
         <h3 class="bullet">Handles conflicts (merges)</h3>
         <h3 class="bullet">Also:</h3>
       </section>
-      <section data-bespoke-backdrop="emphatic" class="emphatic-text"><img src="images/GitHub-Mark-120px-plus.png" alt="GitHub cat logo" width="120" height="120" class="bullet"><img src="images/GitHub_Logo.png" alt="GitHub wordmark" width="250" height="102" class="bullet"></section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic-text"><img src="images/GitHub-Mark-120px-plus.png" alt="GitHub cat logo" width="120" height="120"><img src="images/GitHub_Logo.png" alt="GitHub wordmark" width="250" height="102" class="bullet"></section>
       <section>
-        <h2 class="bullet">Let's begin</h2>
+        <h2 class="bullet">Let's begin - do this once.</h2>
         <h3 class="bullet">First: make a repository on your local computer.</h3>
         <h3 class="bullet">This is called <code>init</code>ializing.</h3>
         <pre class="bullet"><code class="language-bash">$ pwd
-/home/alex/Development/presentation-git-your-ftc-on
+/home/nathan/Programming/Projects_in_cs/Robotic/
 
 $ git init
 Initialized empty Git repository in
-/Users/alex/Development/presentation-git-your-ftc-on/.git/
+/home/nathan/Programming/Projects_in_cs/Robotics/.git/
 
 $ git status
 On branch master
-
 Initial commit
+nothing to commit (create/copy files and use "git add" to track)
+</code></pre>
+      </section>
+      <section>
+        <h2 class="bullet">Add some code</h2>
+        <pre class="bullet"><code class="language-bash">$ echo "Readme" > README.md
 
-nothing to commit (create/copy files and use "git add" to track)</code></pre>
+$ git add README.md
+
+$ git commit -m "Initial Commit"
+
+</code></pre>
+      </section>
+      <section>
+        <h2 class="bullet">Sync with GitHub</h2>
+        <h3 class="bullet">Find the URL on your GitHub page.</h3>
+        <pre class="bullet"><code class="language-bash">$ git remote add origin https://github.com/Garfield-HS-Projects/TANK.git
+
+$ git push origin master
+</code></pre>
+      </section>
+      <section>
+        <h2 class="bullet">For everyone else</h2>
+        <h3 class="bullet">All other team members need to do this.</h3>
+        <h3 class="bullet">You only need to do this once.</h3>
+        <pre class="bullet"><code class="language-bash">$ git clone https://github.com/Garfield-HS-Projects/TANK.git
+</code></pre>
       </section>
       <section>
         <h2 class="bullet">Make some changes...</h2>
         <pre class="bullet"><code class="language-bash">$ echo 'Hello, world!' > README.md
 $ git status
 On branch master
-
-Initial commit
-
-Untracked files:
- (use "git add &lt;file&gt;..." to include in what will be committed)
- 
- README.md
- 
-nothing added to commit but untracked files present (use "git add" to track)
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+    (use "git add <file>..." to update what will be committed)
+    (use "git checkout -- <file>..." to discard changes in working directory)
+    
+    modified:   README.md
+    
+no changes added to commit (use "git add" and/or "git commit -a")
 </code></pre>
       </section>
       <section data-bespoke-backdrop="emphatic" class="emphatic-text">
         <h2 class="bullet">When in doubt,</h2>
         <h2 class="bullet"><code>git status</code></h2>
       </section>
-      <section data-bespoke-backdrop="emphatic" class="emphatic-text">
-        <pre class="bullet"><code class="language-bash">$ git status
-On branch master
-
-Initial commit
-
-Untracked files:
- (use "git add &lt;file&gt;..." to include in what will be committed)
- 
- README.md
- 
-nothing added to commit but untracked files present (use "git add" to track)
-</code></pre>
-      </section>
       <section>
         <h2 class="bullet">Commits</h2>
         <h3 class="bullet">The <strong>working directory</strong> is what you see in your editor.</h3>
         <h3 class="bullet">The <strong>staging area</strong> is where you queue changes to commit them.</h3>
-        <h3 class="bullet">A <strong>commit</strong> is a snapshot of your repository at a particular point in time. </h3>
+        <h3 class="bullet">A <strong>commit</strong> is a snapshot of your repository at a particular point in time.</h3>
       </section>
       <section>
         <h2>A picture is worth 1000 words (assumes x86)</h2><img src="images/git-staging-area.png" alt="Git staging area diagram" height="195" width="343">
@@ -105,21 +110,21 @@ nothing added to commit but untracked files present (use "git add" to track)
         <h2 class="bullet">Example</h2>
         <pre class="bullet"><code class="language-bash">$ git status
 On branch master
-
-Initial commit
-
-Untracked files:
- (use "git add &lt;file&gt;..." to include in what will be committed)
- README.md
- 
-nothing added to commit but untracked files present (use "git add" to track)
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+    (use "git add <file>..." to update what will be committed)
+    (use "git checkout -- <file>..." to discard changes in working directory)
+    
+    modified:   README.md
+    
+no changes added to commit (use "git add" and/or "git commit -a")
 
 $ git add README.md
 
-$ git commit -m "Initial commit"
-[master (root-commit) 85d721a] Initial commit
-&nbsp;1 file changed, 1 insertion(+)
-&nbsp;create mode 100644 README.md</code></pre>
+$ git commit -m "Made README say hello."
+[master cca3472] Made README say hello.
+&nbsp;1 file changed, 1 insertion(+), 1 deletion(-)
+</code></pre>
       </section>
       <section>
         <h2 class="bullet">What just happened?</h2>
@@ -130,14 +135,9 @@ $ git commit -m "Initial commit"
       <section>
         <pre><code class="language-bash">$ git status
 On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+&nbsp;&nbsp;(use "git push" to publish your local commits)
 nothing to commit, working directory clean
-
-$ git log
-commit 85d721a9aad86b4ab1ba7add3f4add97bb431a1a
-Author: Alex Jordan <alex@strugee.net>
-Date:		Wed Sep 23 17:39:26 2015 -0700
-
-&nbsp;&nbsp;Initial commit
 </code></pre>
       </section>
       <section>
@@ -146,47 +146,9 @@ Date:		Wed Sep 23 17:39:26 2015 -0700
         <h3 class="bullet">Then we used <code>git log</code> to see a log of all our commits (there's only one so far)</h3>
       </section>
       <section>
-        <h2 class="bullet">Making branches</h2>
-        <h3 class="bullet">A <em>branch</em> is a way to develop something in parallel</h3>
-        <h3 class="bullet">You can make changes and commit on a separate branch, without affecting everyone else</h3>
-        <h3 class="bullet">You already have a branch: <code>master</code></h3>
-      </section>
-      <section>
-        <h3 class="bullet"><code>git status</code>:</h3>
-        <pre class="bullet"><code class="language-bash">$ git status
-On branch master
-nothing to commit, working directory clean</code></pre>
-        <h3 class="bullet">Let's list our branches:</h3>
-        <pre class="bullet"><code class="language-bash">$ git branch
-* master
-</code></pre>
-      </section>
-      <section>
-        <h3 class="bullet">Create a new one:</h3>
-        <pre class="bullet"><code class="language-bash">$ git branch something-else</code></pre>
-        <h3 class="bullet">And list our branches again:</h3>
-        <pre class="bullet"><code class="language-bash">$ git branch
-* master
-&nbsp;&nbsp;something-else
-</code></pre>
-      </section>
-      <section>
-        <h3 class="bullet">Finally, we can switch to our new branch:</h3>
-        <pre class="bullet"><code class="language-bash">$ git checkout something-else
-Switched to branch 'something-else'
-
-$ git status
-On branch something-else
-nothing to commit, working directory clean
-</code></pre>
-      </section>
-      <section>
-        <h2 class="bullet">Demonstration: different commits on different branches</h2>
-      </section>
-      <section>
         <h2 class="bullet">Pushing</h2>
         <h3 class="bullet">We've been working locally so far</h3>
-        <h3 class="bullet">Let's publish!</h3>
+        <h3 class="bullet">We want to share</h3>
         <h3 class="bullet"><a href="https://github.com/">GitHub</a></h3>
       </section>
       <section>
@@ -196,54 +158,31 @@ nothing to commit, working directory clean
         <h3 class="bullet">GitHub != Git</h3>
       </section>
       <section>
-        <h2 class="bullet">Remotes</h2>
-        <h3 class="bullet">A <em>remote</em> is basically a URL + name</h3>
-        <h3 class="bullet">The URL points to some other copy of the repository</h3>
-        <h3 class="bullet">For example: GitHub</h3>
-      </section>
-      <section>
-        <h2 class="bullet">Putting them together</h2>
-        <h3 class="bullet">We're going to add a remote called <code>origin</code> that points to GitHub</h3>
-        <h3 class="bullet">(<code>origin</code> is the traditional name for your "main" remote)</h3>
-        <h3 class="bullet">Then we're going to upload our commits by <em>pushing</em> them to GitHub</h3>
-      </section>
-      <section data-bespoke-backdrop="emphatic" class="emphatic-text">
         <h2>Example</h2>
-        <pre><code class="language-bash">$ git push origin master
-Counting objects: 3, done.
-Writing objects: 100% (3/3), 229 bytes | 0 bytes/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To git@github.com:redshiftrobotics/git-your-ftc-on-demonstration.git
-&nbsp;* [new branch]			 master -> master
-</code></pre>
+        <pre><code class="language-bash">$ git pull
+Username for 'https://github.com': NathanMer
+Password for 'https://NathanMer@github.com': 
+Already up-to-date.
+
+$ git push
+    Username for 'https://github.com': NathanMer
+    Password for 'https://NathanMer@github.com':
+    Counting objects: 3, done.
+    Writing objects: 100% (3/3), 276 bytes | 0 bytes/s, done.
+    Total 3 (delta 0), reused 0 (delta 0)
+    To https://github.com/Garfield-HS-Projects/TANK.git
+    &nbsp;&nbsp;d6ff69b..cca3472  master -> master
+    </code></pre>
       </section>
       <section>
         <h3 class="bullet">"Hey, Git! Take the local branch <code>master</code>, and push (upload) it to the <code>origin</code> remote."</h3>
       </section>
       <section>
-        <h2 class="bullet">Audience participation</h2>
-        <h3 class="bullet">Give me your GitHub username</h3>
-        <h3 class="bullet">Try making a change to <code>README.md</code></h3>
-        <h3 class="bullet">Push</h3>
-      </section>
-      <section>
-        <h2 class="bullet">Merging</h2>
-        <h3 class="bullet"><code>git status</code> will tell you how to mark resolutions, etc.</h3>
-        <h3 class="bullet">Git inserts markers into files to help you</h3>
-        <h3 class="bullet">I'll demonstrate</h3>
-      </section>
-      <section>
-        <h2 class="bullet">GitHub-specific stuff</h2>
-        <h3 class="bullet">If you clone someone else's repo and push, you'll be denied</h3>
-        <h3 class="bullet"><em>Forking</em> creates another copy of the repository, so that you can have read-write access</h3>
-        <h3 class="bullet">Protip: remotes are very useful when dealing with forks!</h3>
-        <h3 class="bullet">A <em>Pull Request</em> requests someone else to merge changes in your fork (use branches!)</h3>
-      </section>
-      <section>
-        <h2 class="bullet">Other useful tools</h2>
-        <h3 class="bullet"><code>git clone</code> will take a repository URL and download and set it up for you</h3>
-        <h3 class="bullet"><code>git diff</code> will show you the difference between your working directory and your staging area</h3>
-        <h3 class="bullet"><code>git diff --cached</code> does the same, but for the staging area and the current commit</h3>
+        <h2 class="bullet">Merge Conflicts!</h2>
+        <h3 class="bullet">Sometimes two people edit the same file in a way git can't fix</h3>
+        <h3 class="bullet">This can usually be avoided by spliting your project into parts</h3>
+        <h3 class="bullet">Each person should only edit the files for their part.</h3>
+        <h3 class="bullet">Then people will not be editing the same files.</h3>
       </section>
       <section>
         <h2>Access this presention again</h2>
